@@ -35,7 +35,7 @@ borrowRoutes.post('/', async (req: Request, res: Response) => {
     })
     }
 catch (error: any) {
-  res.status(400).json({
+  res.status(404).json({
     message: "Validation failed",
     success: false,
     error: {

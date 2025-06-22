@@ -10,7 +10,6 @@ booksRoutes.post('/', async (req: Request, res: Response) => {
     try {
         const book = await Book.create(body)
 
-
         const {
             _id,
             title,
@@ -39,8 +38,10 @@ booksRoutes.post('/', async (req: Request, res: Response) => {
                 updatedAt,
             },
         })
-    } catch (error: any) {
-        res.status(400).json({
+    } catch (error: any) 
+
+{
+        res.status(404).json({
             message: "Validation failed",
             success: false,
             error: {
@@ -59,7 +60,7 @@ booksRoutes.get('/', async (req: Request, res: Response) => {
 
     let data = []
     if (bookGenre) {
-        data = await Book.find({ genre: bookGenre }).sort({ "createdAt": -1 }).limit(10)
+        data = await Book.find({ genre: bookGenre }).sort({ "copies": -1 }).limit(10)
     } else {
        
         data = await Book.find()

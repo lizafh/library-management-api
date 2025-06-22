@@ -48,9 +48,6 @@ book.copies = book.copies - borrowQuantity;
    await book.save();
 })
 
-// borrowSchema.post("save",function(doc,next){
-//     console.log("doc from post" + doc);
-//     next;
-// })
+
 
 export const Borrow = model("Borrow",borrowSchema)

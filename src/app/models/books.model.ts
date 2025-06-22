@@ -1,4 +1,5 @@
 import { Model, model, Schema } from "mongoose"
+
 import { BookInstanceMethod, IBooks } from "../interfaces/books.interface"
 
 const bookSchema = new Schema<IBooks, Model<IBooks>, BookInstanceMethod >(
@@ -25,6 +26,7 @@ const bookSchema = new Schema<IBooks, Model<IBooks>, BookInstanceMethod >(
       type: String,
       unique: [true, 'isbn should be unique'],
       required: [true, 'ISBN is required'],
+      
     },
     description: {
       type: String,
@@ -64,5 +66,9 @@ bookSchema.method("borrowCopies",async function(quantity:number){
   return { success: true };
 
 })
+
+bookSchema.post("save", function (doc) {
+  console.log(`New book added: "${doc.title}" by ${doc.author}`);
+});
 
 export const Book = model<IBooks>("Book",bookSchema)
