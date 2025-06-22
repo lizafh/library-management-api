@@ -1,12 +1,12 @@
 # 📚 Library Management API
 
-A simple RESTful API for managing books and borrowing operations in a library system. Built with **Express.js**, **TypeScript**, **Mongoose** for schema validation.
+A comprehensive Library Management API system for managing a library’s inventory and borrowing process. Built using **Express.js**, **TypeScript**, **MongoDB**, and **Mongoose**, this API enables full CRUD operations on books, enforces business rules (like availability control), and provides advanced querying features such as filtering, sorting, and aggregation summaries.
 
 ---
 
 ## 🚀 Features
 
-- ✅ Add, update, delete, and retrieve books
+- ✅ Add,get,update,delete, and retrieve books
 - 📚 Borrow books with availability check
 - 📊 Borrowed books summary using aggregation
 - 🔍 Supports filtering, sorting, and limit
@@ -15,7 +15,7 @@ A simple RESTful API for managing books and borrowing operations in a library sy
 
 - ### 🚀 Live Link
 
-- 🖥️ [Library Management UI](https://library-management-orpin-one.vercel.app/)
+- 🖥️ [Library Management Live Link](https://library-management-orpin-one.vercel.app/)
 
 ### ⚙️ API Documentation 
 
